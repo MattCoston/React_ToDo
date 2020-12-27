@@ -13,20 +13,19 @@ class App extends Component {
   handleClick = () => {
     this.setState({ isClicked: !this.state.isClicked });
     console.log(this.state.isClicked);
-    console.log(this.state.input)
+    console.log(this.state.input);
   };
-  inputUpdate = event => {
-    this.setState({input: event.target.value})
-  }
-  formSubmit = event => {
-    event.preventDefault()
-    console.log("THIS IS STATE", this.state.items)
+  inputUpdate = (event) => {
+    this.setState({ input: event.target.value });
+  };
+  formSubmit = (event) => {
+    event.preventDefault();
+    console.log("THIS IS STATE", this.state.items);
     this.setState({
-      items : [...this.state.items, this.state.input],
-      input: ''
-      
-    })
-  }
+      items: [...this.state.items, this.state.input],
+      input: "",
+    });
+  };
   // handleChange = (event.target.value) => {
   //   this.setState({ text: !this.state.isClicked });
   // };
@@ -36,8 +35,12 @@ class App extends Component {
         <h1>This is my first ToDo App!</h1>
         <p>Add an item to the list</p>
         <form onSubmit={this.formSubmit}>
-        <input type="text" value={this.state.input} onChange={this.inputUpdate}></input>
-        <button>Add to List</button>
+          <input
+            type="text"
+            value={this.state.input}
+            onChange={this.inputUpdate}
+          ></input>
+          <button>Add to List</button>
         </form>
       </div>
     );
