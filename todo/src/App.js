@@ -9,26 +9,18 @@ class App extends Component {
       items: [],
     };
   }
-
-  handleClick = () => {
-    this.setState({ isClicked: !this.state.isClicked });
-    console.log(this.state.isClicked);
-    console.log(this.state.input);
-  };
   inputUpdate = (event) => {
     this.setState({ input: event.target.value });
+    console.log(event.target.value);
   };
   formSubmit = (event) => {
     event.preventDefault();
-    console.log("THIS IS STATE", this.state.items);
     this.setState({
       items: [...this.state.items, this.state.input],
       input: "",
     });
+    //console.log("THIS IS STATE", this.state.items);
   };
-  // handleChange = (event.target.value) => {
-  //   this.setState({ text: !this.state.isClicked });
-  // };
   render() {
     return (
       <div className="App">
@@ -42,11 +34,14 @@ class App extends Component {
           ></input>
           <button>Add to List</button>
         </form>
+        {console.log(this.state.items)}
       </div>
     );
   }
 }
 export default App;
+
+// write a component that shows the items list in divs
 // Yank out all the unnecessary code and begin building a todo app
 // Create state for your app.js with isClicked: false in it
 // Create a button and add an onClick handler that changes the value of isClicked
