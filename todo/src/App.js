@@ -19,8 +19,12 @@ class App extends Component {
       items: [...this.state.items, this.state.input],
       input: "",
     });
-    //console.log("THIS IS STATE", this.state.items);
+    return <p>{this.state.items}</p>;
   };
+  showTodo = () => {
+    return <p>{this.state.items}</p>;
+  };
+
   render() {
     return (
       <div className="App">
@@ -32,7 +36,7 @@ class App extends Component {
             value={this.state.input}
             onChange={this.inputUpdate}
           ></input>
-          <button>Add to List</button>
+          <button onClick={this.showTodo}>Add to List</button>
         </form>
         {console.log(this.state.items)}
       </div>
