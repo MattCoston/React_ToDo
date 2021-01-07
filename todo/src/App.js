@@ -37,7 +37,13 @@ class App extends Component {
           ></input>
           <button onClick={this.showTodo}>Add to List</button>
         </form>
-        {console.log(this.state.items)}
+        <ol>
+          <li>
+            {this.state.items}
+            <br></br>
+          </li>
+        </ol>
+        ;{console.log(this.state.items)}
       </div>
     );
   }
