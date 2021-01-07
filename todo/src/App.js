@@ -19,7 +19,6 @@ class App extends Component {
       items: [...this.state.items, this.state.input],
       input: "",
     });
-    return <p>{this.state.items}</p>;
   };
   showTodo = () => {
     return <p>{this.state.items}</p>;
