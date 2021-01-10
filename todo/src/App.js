@@ -37,13 +37,12 @@ class App extends Component {
           ></input>
           <button onClick={this.showTodo}>Add to List</button>
         </form>
-        <ol>
-          <li>
-            {this.state.items}
-            <br></br>
-          </li>
-        </ol>
-        ;{console.log(this.state.items)}
+        <ul>
+          {this.state.items.map((item, index) => {
+            return <li key={index}>{item}</li>;
+          })}
+        </ul>
+        {console.log(this.state.items)}
       </div>
     );
   }
