@@ -21,10 +21,6 @@ class App extends Component {
       input: "",
     });
   };
-  showTodo = () => {
-    return <p>{this.state.items}</p>;
-  };
-
   render() {
     return (
       <div className="App">
