@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Button } from "@material-ui/core";
 
 class App extends Component {
   constructor(props) {
@@ -35,7 +36,9 @@ class App extends Component {
             value={this.state.input}
             onChange={this.inputUpdate}
           ></input>
-          <button onClick={this.showTodo}>Add to List</button>
+          <Button variant="contained" color="primary" onClick={this.formSubmit}>
+            Add to List
+          </Button>
         </form>
         <ul>
           {this.state.items.map((item, index) => {
